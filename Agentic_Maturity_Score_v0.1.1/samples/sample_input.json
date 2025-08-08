@@ -1,0 +1,32 @@
+{
+  "responses": [
+    {
+      "ID": "Q01",
+      "Domain": "Suitability Evaluation",
+      "Question": "Do you have documented use-case risk tiers with go/no-go criteria for agent deployment?",
+      "Weight": 5,
+      "Answer": "Ad hoc"
+    },
+    {
+      "ID": "Q04",
+      "Domain": "Action Constraints & Approvals",
+      "Question": "Is a registry of high-risk actions maintained and reviewed quarterly?",
+      "Weight": 5,
+      "Answer": "No"
+    },
+    {
+      "ID": "Q10",
+      "Domain": "Legibility & Auditability",
+      "Question": "Are agent actions and reasoning logged in a tamper-evident ledger?",
+      "Weight": 5,
+      "Answer": "Emerging"
+    },
+    {
+      "ID": "Q13",
+      "Domain": "Automatic Monitoring",
+      "Question": "Is an independent monitor model reviewing actions in real-time?",
+      "Weight": 5,
+      "Answer": "Managed"
+    }
+  ]
+}

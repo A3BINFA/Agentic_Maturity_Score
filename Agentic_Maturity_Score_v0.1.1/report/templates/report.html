@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>{{ company_name }} — Agentic Maturity Assessment</title>
+  <style>
+    :root {
+      --brand-primary: {% raw %}{{ brand.primary }}{% endraw %};
+      --brand-accent: {% raw %}{{ brand.accent }}{% endraw %};
+    }
+    body { font-family: Arial, sans-serif; margin: 2rem; }
+    h1, h2 { margin-bottom: 0.3rem; }
+    h1 { color: var(--brand-accent); }
+    table { width: 100%; border-collapse: collapse; margin: 1rem 0; }
+    th, td { border: 1px solid #ddd; padding: 8px; }
+    th { background: #f5f5f5; text-align: left; }
+    .pill { padding: 2px 8px; border-radius: 12px; display: inline-block; }
+    .H { background: #fdd; }
+    .M { background: #ffd; }
+    .L { background: #dfd; }
+    .brand-bar { height: 6px; background: linear-gradient(90deg, var(--brand-primary), var(--brand-accent)); border-radius: 4px; margin: 10px 0 20px; }
+    .logo { height: 46px; }
+  </style>
+</head>
+<body>
+  {% if brand.logo_b64 %}<img class="logo" src="data:image/png;base64,{{ brand.logo_b64 }}" alt="logo"/>{% endif %}
+  <div class="brand-bar"></div>
+  <h1>{{ company_name }} — Agentic Maturity Assessment</h1>
+  <p>Generated: {{ generated_at }}Z</p>
+
+  <h2>Overall</h2>
+  <p><strong>Weighted Score:</strong> {{ scores.overall.weighted_score }} | <strong>Level:</strong> {{ scores.overall.level }}</p>
+
+  <h2>Domain Scores</h2>
+  <table>
+    <tr><th>Domain</th><th>Score</th><th>Level</th></tr>
+    {% for domain, s in scores.domains.items() %}
+      <tr><td>{{ domain }}</td><td>{{ s.weighted_score }}</td><td>{{ s.level }}</td></tr>
+    {% endfor %}
+  </table>
+
+  <h2>Top Gaps & Recommended Actions</h2>
+  <table>
+    <tr><th>Risk</th><th>Domain</th><th>Question</th><th>Recommended Action</th></tr>
+    {% for item in roadmap[:20] %}
+      <tr>
+        <td><span class="pill {{ item.risk }}">{{ item.risk }}</span></td>
+        <td>{{ item.domain }}</td>
+        <td>{{ item.question }}</td>
+        <td>{{ item.recommended_action }}</td>
+      </tr>
+    {% endfor %}
+  </table>
+</body>
+</html>
