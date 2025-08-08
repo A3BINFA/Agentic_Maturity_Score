@@ -1,4 +1,5 @@
-![Alt Logo](Agentic_Maturity_Score/Riteupai_logo_august042025.png)
+![Alt Logo](Agentic_Maturity_Score
+/Agentic_Maturity_Score_v0.1.1/Riteupai_logo_august042025.png)
 
 # Agentic Maturity Score (MVP)
 
