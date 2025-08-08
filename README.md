@@ -1,3 +1,5 @@
+![Alt Logo](Agentic_Maturity_Score/Riteupai_logo_august042025.png)
+
 # Agentic Maturity Score (MVP)
 
 An assessment tool and API that scores an organization's maturity against the Governance Agent Spec and generates a prioritized roadmap.
